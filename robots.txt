@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Reemplazar por el dominio definitivo antes de publicar
+Sitemap: https://www.tudominio.com/sitemap.xml
