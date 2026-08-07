@@ -571,6 +571,7 @@ footer{
         width: 100%;
         max-width: 100%;
         margin: 0;
+        flex-direction: column;
     }
     .card img{
         width: 100%;
@@ -578,6 +579,7 @@ footer{
         display: block;
     }
     .card .content{
+        width: 100%;
         padding: 1.5rem;
     }
     .btn-read{
