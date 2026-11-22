@@ -65,91 +65,148 @@
     <link rel="manifest" href="../icons/site.webmanifest" />
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="../images/logo.png" alt="Lic. Sofía Martínez, psicóloga">
-            </div>
-            <div>
-                <nav class="nav-bar">
-                    <ul class="menu">
-                        <li>
-                            <a href="../index.html">INICIO</a>
-                        </li>
-                        <li>
-                            <a href="../pages/aboutme.html">ACERCA DE MÍ</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+    <header class="site-header">
+        <div class="nav-pill">
+
+            <a href="../index.html#inicio" class="brand"
+                aria-label="Sofía Martínez - Inicio">
+                <img src="../images/logo.png" alt="Lic. Sofía Martínez">
+            </a>
+
+            <nav class="site-nav" aria-label="Navegación principal">
+                <a href="../index.html#inicio">Inicio</a>
+                <a href="../pages/aboutme.html">Acerca de mí</a>
+                <a href="../index.html#servicios">Servicios</a>
+                <a href="../index.html#publicaciones">Publicaciones</a>
+            </nav>
         </div>
     </header>
     <main>
-        <section id="contacto">
-            <h1>Contacto | Psicóloga en Mendoza</h1>
+        
+<section id="contacto">
+    <div class="contacto-container">
+
+        <h1>Contacto</h1>
+
+        <div class="contacto-layout">
+
+            <!-- Presentación, sin card -->
+            <div class="contacto-intro">
+                <h2>¿Listo para dar el primer paso?</h2>
+
+                <p>
+                    Si querés comenzar un proceso terapéutico
+                    o tenés alguna consulta, podés
+                    comunicarte por WhatsApp.
+                </p>
+
+                <p>
+                    La primera conversación es un espacio
+                    para conocernos y resolver tus dudas.
+                </p>
+            </div>
+
+            <!-- Información en card translúcida -->
             <article class="contact-card">
-                <h3>¿Listo para dar el primer paso?</h3>
-                <p>
-                    Si querés comenzar un proceso terapéutico o tenés alguna consulta, podés comunicarte por WhatsApp. 
-                </p>
-                <p>
-                    La primera conversación es un espacio para conocernos y resolver tus dudas.
-                </p>
-                <h3>Horarios de atención</h3>
-                <p>Lunes a Viernes </p>
-                <p>  9:00 a 13:00 hs</p>
-                <p>15:00 a 20:00 hs</p>
-                <h3>Modalidad</h3>
-                <ul>
-                    <li>Atención presencial</li>
-                    <li>Atención online</li>
-                </ul>
-                <h3>Consultorio</h3>
-                <address>
-                <p>Av. Colón 1234</p>
-                <p>Ciudad de Mendoza</p>
-                </address>
-                
-                <a href="https://wa.me/5492611234567" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    Agendá tu consulta
-                </a>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-container">
-            <article class="footer-card">
-                <div class="logo">
-                    <img src="../images/logo.png" alt="">
+
+                <div class="contact-info-group">
+                    <h3>Horarios de atención</h3>
+                    <p>Lunes a viernes</p>
+                    <p>9:00 a 13:00 hs</p>
+                    <p>15:00 a 20:00 hs</p>
                 </div>
-                <p>Cuidar tu salud mental es invertir en tu bienestar </p>
-            </article>
-            <article class="footer-card footer-info">
-                <h3>Lic. Sofía Martínez</h3>
-                <div class="footer-detail">
-                    <p>Psicóloga Clínica</p>
-                    <p>M.P 12.345</p>
+
+                <div class="contact-info-group">
+                    <h3>Modalidad</h3>
                     <p>Atención presencial y online</p>
                 </div>
+
+                <div class="contact-info-group">
+                    <h3>Consultorio</h3>
+                    <address>
+                        <p>Av. Colón 1234</p>
+                        <p>Ciudad de Mendoza</p>
+                    </address>
+                </div>
+
             </article>
-            <article class="footer-card footer-social">
-                <h3>Seguime en redes</h3>
-                
+
+        </div>
+    </div>
+</section>
+
+    </main>
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <!-- Identidad -->
+            <div class="footer-brand">
+                <img
+                    src="../images/logo.png"
+                    alt="Logo de Lic. Sofía Martínez"
+                    class="footer-logo"
+                >
+                <p>
+                    Cuidar tu salud mental es invertir
+                    en tu bienestar.
+                </p>
+            </div>
+
+            <!-- Información profesional -->
+            <div class="footer-info">
+                <h3>Lic. Sofía Martínez</h3>
+
+                <p>Psicóloga clínica</p>
+                <p>M.P. 12.345</p>
+                <p>Atención presencial y online</p>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="footer-social">
+                <p>Seguime en redes</p>
+
                 <div class="social-links">
-                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"
+                        aria-hidden="true"></i>
                     </a>
 
-                    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-
-                    <a href="https://wa.me/5492610000000" target="_blank" aria-label="WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
+                    <a
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"
+                        aria-hidden="true"></i>
                     </a>
                 </div>
-            </article>
+            </div>
+
         </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Lic. Sofía Martínez · Todos los derechos reservados</p>
+        </div>
+
     </footer>
+
+<a
+    href="https://wa.me/5492611234567"
+    class="btn-whatsapp floating-cta"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Agendá consulta por WhatsApp"
+>
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span>Agendá consulta</span>
+</a>
+
 </body>
 </html>

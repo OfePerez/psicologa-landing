@@ -1,4 +1,9 @@
-/* ===== RESET ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+/* =========================================
+   01. RESET Y VARIABLES
+========================================= */
 
 * {
     margin: 0;
@@ -6,21 +11,42 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F8F7F3;
+    color: #3E3A36;
+    font-family: "IBM Plex Sans", sans-serif;
+    line-height: 1.6;
+}
+
+:root {
+    --background-color: #F8F7F3;
+    --surface-color: #EFE9DD;
+    --primary-color: #7A9E7E;
+    --primary-hover: #5F7F63;
+    --secondary-color: #F2EEE7;
+    --text-color: #3E3A36;
+    --text-secondary: #6B6964;
+
+    --radius: 16px;
+    --shadow: 0 6px 20px rgba(0, 0, 0, .08);
+}
+
 img {
     display: block;
     max-width: 100%;
-}
-
-ul {
-    list-style: none;
 }
 
 a {
     text-decoration: none;
     color: inherit;
 }
-*{
-    box-sizing: border-box;
+
+ul {
+    list-style: none;
 }
 
 button,
@@ -30,101 +56,98 @@ select {
     font: inherit;
 }
 
-/*Variables*/
-:root{
-    /* Colores*/
-    --background-color: #F8F7F3;
-    --surface-color: #EFE9DD;
-
-    --primary-color: #7A9E7E;
-    --primary-hover: #5F7F63;
-    --secondary-color:#F2EEE7; 
-    --text-color: #3E3A36;
-    --text-secondary: #6B6964;
-
-    /* Bordes */
-
-    --radius: 16px;
-
-    /* Sombras */
-
-    --shadow: 0 6px 20px rgba(0,0,0,.08);
-
-}
-/*estilos globlales*/
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: "nunito", sans-serif;
-    line-height: 1.6;
-}
-header {
-    background-color: var(--background-color);
-    border-bottom: 1px solid #E6E2D9;
-}
-h1, h2, h3 {
-    font-family: "Nunito", sans-serif;
-    font-weight: 700;
+h1,
+h2,
+h3 {
     color: var(--text-color);
     line-height: 1.2;
 }
-h1{
-    font-size: 3rem;
-}
-h2{
-    font-size: 2rem;
-}
-h3{
-    font-size: 1.4rem;
-}
-p{
-    font-size: 1rem;
-    color:var(--text-secondary);
-}
-ul{
-    list-style: none;
-}
-a{
-    color: inherit;
-    text-decoration: none;
-}
-img{
-    max-width: 100%;
-    display: block;
+
+p {
+    color: var(--text-secondary);
 }
 
-/*layout*/
-.header-container{
+.content {
+    padding: 1rem;
+}
+
+
+/* =========================================
+   02. HEADER FLOTANTE
+========================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 4%;
+    background: transparent;
+    border: none;
+}
+
+.nav-pill {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: .65rem 1.5rem;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    margin: .5rem 2rem;
-}
-.menu{
-    display: flex;
-    list-style: none;
     gap: 2rem;
-    margin: 0;
-    padding: 0;
+
+    background: rgba(248, 247, 243, .72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 999px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
 }
 
-.logo img {
-    width: 6rem;
+.brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+    overflow: hidden;
 }
-.service-card img{
-    width: 80px;
-}
-.card img{
+
+.brand img {
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
+    border-radius: 50%;
 }
-.content{
-    padding: 1rem;
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-left: auto;
 }
-#inicio{
+
+.site-nav a {
+    font-size: .9rem;
+    font-weight: 600;
+    transition: color .3s ease;
+}
+
+.site-nav a:hover {
+    color: var(--primary-hover);
+}
+
+
+/* =========================================
+   03. HERO PRINCIPAL
+========================================= */
+
+#inicio {
     min-height: 80vh;
 
     background-image: url("../images/hero-content.png");
@@ -135,506 +158,1470 @@ img{
     display: flex;
     align-items: center;
     padding: 4rem 6%;
+}
 
-}
-.hero-content{
-    max-width: 480px;
-    background: rgba(248, 247, 243, 0.65);
+.hero-content {
+    max-width: 620px;
+    padding: 3rem 3.2rem;
+
+    background: rgba(248, 247, 243, .65);
     backdrop-filter: blur(10px);
-    padding: 3rem;
-    border-radius: var(--radius);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 28px;
     box-shadow: var(--shadow);
+
+    margin-top: 5.5rem;
+    margin-left: 6rem;
 }
-#publicaciones{
-    padding: 4rem 2rem;
-    background-color: var(--background-color);
+
+.hero-content h1 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(3rem, 3.8vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    color: var(--text-color);
 }
-.cards{
-    display: flex;
-    gap: 2rem;
-}
-#publicaciones h2{
-    text-align: center;
-    margin-top: 2rem;
-}
-.card{
-    flex: 1;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    margin: 3rem;
-}
-.card img{
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.hero-content h2{
+
+.hero-content h2 {
     font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--text-secondary);
 }
-.hero-content p{
+
+.hero-content p {
     margin-top: 1.5rem;
 }
-.btn-whatsapp{
+
+
+/* =========================================
+   04. BOTONES
+========================================= */
+
+.btn-whatsapp {
     display: inline-block;
     background-color: var(--primary-color);
     color: white;
     padding: .9rem 1.8rem;
     border-radius: 999px;
     font-weight: 700;
-    transition: .3s;
+    transition: background-color .3s ease;
 }
-.btn-whatsapp:hover{
+
+.btn-whatsapp:hover {
     background-color: var(--primary-hover);
 }
-.btn-read{
+
+.btn-read {
     display: inline-block;
-    background-color:var(--primary-color);
+    background-color: var(--primary-color);
     color: #E6E2D9;
     padding: .5rem 1rem;
     border-radius: 999px;
     font-weight: 700;
-    transition: .3s;
+    transition: background-color .3s ease;
 }
-.btn-read:hover{
-    background-color:var(--primary-color);
+
+.btn-read:hover {
+    background-color: var(--primary-hover);
 }
-#servicios{
+
+
+/* =========================================
+   05. WHATSAPP FLOTANTE
+========================================= */
+
+.floating-cta {
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    z-index: 1100;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
+
+    transition:
+        background-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.floating-cta i {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.floating-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .2);
+}
+
+.floating-cta:focus-visible {
+    outline: 3px solid var(--text-color);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   06. SERVICIOS EDITORIALES
+========================================= */
+
+#servicios {
     background-color: var(--secondary-color);
+    padding: 6rem 6%;
+    scroll-margin-top: 110px;
 }
-#servicios h2{
-    text-align: center;
-    margin: 0 0 1.5rem;
-    color: var(--text-color);
+
+.servicios-container {
+    max-width: 1280px;
+    margin: 0 auto;
 }
-.services{
-    display: flex;
-    gap:2rem
+
+.servicios-encabezado {
+    margin-bottom: 3.5rem;
 }
-.service-card{
-    flex: 1;
-    margin: .5rem 2rem 1.5rem;
+
+.servicios-encabezado p {
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: var(--primary-hover);
+}
+
+#servicios h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-style: normal;
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -.04em;
+    line-height: 1.1;
+    text-align: left;
+    margin-top: .5rem;
+}
+
+.servicios-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.3fr)
+        minmax(320px, .85fr);
+
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+}
+
+/* Lista de servicios */
+
+.servicios-lista {
+    border-top: 1px solid rgba(62, 58, 54, .25);
+}
+
+.servicio-opcion {
+    width: 100%;
+    min-height: 170px;
+    padding: 1.5rem .5rem;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-.service-card{
-    transition: transform .3s ease;
-}
-.service-card:hover{
-    transform: translateY(-8px);
-}
-.service-card img{
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-.service-card h3{
-    margin-bottom: .8rem;
-}
-footer{
-    border-top: 2px solid var(--secondary-color);
-}
-
-.footer-container{
-    display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     gap: 1rem;
-    padding: .5rem 2rem;
-    margin: 0;
+
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(62, 58, 54, .25);
+    text-align: left;
+    cursor: pointer;
 }
-.footer-card{
-    flex: 1;
-    text-align: center;
+
+.servicio-nombre {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(2.2rem, 3.2vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #929C90;
+
+    transform-origin: left center;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.servicio-flecha {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid currentColor;
+    border-radius: 50%;
+
+    color: #929C90;
+    font-size: 1.3rem;
+
+    transition:
+        color .3s ease,
+        background .3s ease;
+}
+
+.servicio-opcion:hover .servicio-nombre,
+.servicio-opcion.activo .servicio-nombre,
+.servicio-opcion:focus-visible .servicio-nombre {
+    color: #425D49;
+    transform: scale(1.035);
+}
+
+.servicio-opcion:hover .servicio-flecha,
+.servicio-opcion.activo .servicio-flecha {
+    color: white;
+    background: #425D49;
+}
+
+.servicio-opcion:focus-visible {
+    outline: 2px solid var(--primary-hover);
+    outline-offset: 3px;
+}
+
+/* Panel circular */
+
+.servicio-detalle {
+    position: sticky;
+    top: 150px;
+
+    width: min(100%, 440px);
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    margin-inline: auto;
+    padding: 2.5rem 3.1rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .2rem;
-}
-.social-links {
-    display: flex;
+    justify-content: center;
     gap: .8rem;
-    margin-top: .2rem;
-}
-.social-links a{
-    font-size: 1.8rem;
-}
-.footer-card p{
-    margin: .2rem 0;
-}
-.footer-info h3{
-    font-size: 2rem;
-    margin: 0 0 .2rem;
-}
-.footer-info{
-    font-size: 1.6rem;
-}
-.footer-detail{
-    display: flex;
-    flex-direction: column;
-    gap:.1rem
+
+    text-align: center;
+    background: #40574B;
+    border-radius: 50%;
+    color: #F8F7F3;
+    box-shadow: var(--shadow);
 }
 
-.post-hero{
+.servicio-indice {
+    font-size: .85rem;
+    letter-spacing: .12em;
+    color: #DFE9DC;
+}
+
+.servicio-ilustracion {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background: #EFE9DD;
+    overflow: hidden;
+}
+
+.servicio-ilustracion img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.servicio-informacion h3 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: .5rem;
+}
+
+.servicio-informacion p {
+    color: #EDF1EA;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   07. PUBLICACIONES EN INICIO
+========================================= */
+
+#publicaciones {
+    padding: 4rem 2rem;
+    background-color: var(--background-color);
+}
+
+#publicaciones h2 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+
+    text-align: center;
+    margin: 0 0 3rem;
+}
+
+.cards {
+    display: flex;
+    gap: 2rem;
+}
+
+.card {
+    flex: 1;
+    margin: 3rem;
+
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card .content {
+    padding: 1rem;
+}
+
+
+/* =========================================
+   08. HERO DE LOS ARTÍCULOS
+========================================= */
+
+.post-hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 9rem 6% 3rem;
+
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: center;
+    background-repeat: no-repeat;
 }
 
-.post-hero::before{
+.post-hero::before {
     content: "";
     position: absolute;
     inset: 0;
+
     background: linear-gradient(
         90deg,
-        rgba(248, 247, 243, 0.92) 0%,
-        rgba(248, 247, 243, 0.78) 48%,
-        rgba(248, 247, 243, 0.15) 100%
+        rgba(248, 247, 243, .92) 0%,
+        rgba(248, 247, 243, .78) 48%,
+        rgba(248, 247, 243, .15) 100%
     );
 }
 
-.post-hero .content{
+.post-hero .content {
     position: relative;
     z-index: 1;
+
     max-width: 750px;
     margin-left: 6%;
     padding: 4rem 0;
 }
 
-.post-hero h2{
-    color: var(--text-color);
-    font-size: 3rem;
+.post-kicker {
+    display: block;
+    margin-bottom: 1rem;
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: var(--primary-hover);
+}
+
+.post-hero h1 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    line-height: 1.05;
     margin-bottom: 1rem;
 }
 
-.post-hero p{
-    color: #4f4a45;
+.post-hero p {
+    color: #4F4A45;
     font-size: 1.15rem;
     line-height: 1.8;
     margin-bottom: 1rem;
 }
-#hero-ansiedad{
+
+#hero-ansiedad {
     background-image: url("../images/ansiedad.png");
 }
-#hero-autocuidado{
+
+#hero-autocuidado {
     background-image: url("../images/autocuidado.png");
 }
+
+
+/* =========================================
+   09. ARTÍCULOS: CONTENEDOR GENERAL
+
+   CORRECCIÓN PRINCIPAL:
+   una sola regla .post-content,
+   sin el límite antiguo de 850px.
+========================================= */
+
+.post-content {
+    width: 92%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 3rem 0 3rem;
+    color: var(--text-color);
+}
+
+.editorial-label {
+    display: block;
+    margin-bottom: 1rem;
+
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: var(--primary-hover);
+}
+
+.post-content p,
+.post-content li {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+
+
+/* =========================================
+   10. ARTÍCULO: CONSEJOS INICIALES
+
+   Dos columnas amplias.
+   Sin card rectangular.
+========================================= */
+
+.editorial-intro {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, .9fr)
+        minmax(0, 1.1fr);
+
+    align-items: start;
+    gap: clamp(2rem, 5vw, 5rem);
+
+    padding: 2rem 0 4rem;
+}
+
+.editorial-intro-text {
+    max-width: 600px;
+}
+
+.editorial-intro h2 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(2.7rem, 4vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+}
+
+.editorial-intro-text p {
+    max-width: 48ch;
+    color: var(--text-secondary);
+}
+
+/* Consejos sin fondo de tarjeta */
+
+.editorial-tips {
+    background: transparent;
+    padding: .5rem 0 .5rem 2rem;
+    border-left: 2px solid var(--primary-color);
+    border-radius: 0;
+}
+
+.editorial-tips ul {
+    list-style: disc;
+    padding-left: 1.3rem;
+}
+
+.editorial-tips li {
+    padding: .5rem 0;
+    color: var(--text-color);
+}
+
+.editorial-tips p {
+    margin-top: 1.5rem;
+    font-size: .9rem;
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   11. ARTÍCULO: COMPRENDER LA ANSIEDAD
+
+   Este bloque sí queda centrado.
+   Tres columnas en escritorio.
+========================================= */
+
+.editorial-info {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+
+    padding: 3rem 0;
+
+    border-top: 1px solid #D9D7CE;
+    border-bottom: 1px solid #D9D7CE;
+}
+
+.editorial-info > .editorial-label {
+    margin-bottom: 2rem;
+}
+
+.editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.editorial-item {
+    min-width: 0;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--primary-color);
+}
+
+.editorial-number {
+    display: block;
+    font-size: .8rem;
+    color: var(--primary-hover);
+    margin-bottom: 1.3rem;
+}
+
+.editorial-item h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-style: normal;
+    font-size: clamp(1.25rem, 1.6vw, 1.65rem);
+    font-weight: 500;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+
+    margin: 0 0 1rem;
+    color: var(--text-color);
+}
+
+.editorial-item p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   12. ARTÍCULO: GUÍA PRÁCTICA
+
+   Distribución horizontal amplia.
+   Sin fondo ni rectángulos flotantes.
+========================================= */
+
+.editorial-strategies {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, .75fr)
+        minmax(0, 1.25fr);
+
+    align-items: start;
+    gap: clamp(2rem, 6vw, 6rem);
+
+    padding: 4rem 0 2rem;
+}
+
+.editorial-strategies-heading {
+    max-width: 520px;
+}
+
+.editorial-strategies h2 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(2.7rem, 4vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.08;
+
+    margin-bottom: 1.5rem;
+}
+
+.editorial-strategies-heading p {
+    color: var(--text-secondary);
+    max-width: 48ch;
+}
+
+.editorial-strategies-list {
+    min-width: 0;
+}
+
+.editorial-strategies-list ol {
+    list-style: none;
+    counter-reset: estrategia;
+}
+
+.editorial-strategies-list li {
+    counter-increment: estrategia;
+
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 1rem;
+
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #D9D7CE;
+}
+
+.editorial-strategies-list li::before {
+    content: counter(estrategia, decimal-leading-zero);
+    color: var(--primary-hover);
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   13. CIERRE DEL ARTÍCULO
+
+   Texto integrado.
+   Sin card flotante.
+========================================= */
+
+.editorial-closing {
+    width: 100%;
+    max-width: none;
+    margin: 1rem 0 0;
+    padding: 1.5rem 0 0;
+
+    background: transparent;
+    border: none;
+    border-top: 1px solid #D9D7CE;
+    border-radius: 0;
+
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   14. PUBLICACIONES RELACIONADAS
+
+   Fila editorial de ancho amplio.
+   Sin tarjeta aislada.
+========================================= */
+
+.related-posts {
+    width: 92%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 4rem 0 5rem;
+
+    text-align: left;
+}
+
+.related-posts > .container,
+.related-posts-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.related-posts h2 {
+    text-align: center;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(2.6rem, 4vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: 0;
+    color: var(--text-color);
+    margin: 0 0 2.5rem;
+}
+
 .related-card {
     display: flex;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 3rem auto;
-    padding: 1rem;
+    align-items: center;
+    gap: 2rem;
 
-    background-color: var(--surface-color);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 1.5rem 0;
 
+    background: transparent;
+
+    border-top: 1px solid #D9D7CE;
+    border-bottom: 1px solid #D9D7CE;
+    border-radius: 0;
+
+    box-shadow: none;
     color: var(--text-color);
     text-decoration: none;
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: color .3s ease;
 }
 
 .related-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+    transform: none;
+    box-shadow: none;
+    color: var(--primary-hover);
 }
 
 .related-card img {
-    width: 150px;
-    height: 110px;
+    width: 220px;
+    height: 145px;
+    flex-shrink: 0;
+
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 16px;
 }
 
 .related-card-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: .5rem;
 }
 
 .related-card-content h3 {
-    margin-bottom: 0.5rem;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.15;
 }
 
 .related-card-content p {
-    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
 }
 
-.related-card-content span {
-    color: var(--primary-color);
-    font-weight: 700;
-}
-.related-posts{
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-.related-posts h2{
-    margin-bottom: 2rem;
-    color: var(--text-color);
-}
-#contacto {
-    min-height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.related-card-content .btn-read {
+    align-self: flex-start;
+    width: fit-content;
+    display: inline-block;
 
-    padding: 5rem 2rem;
+    padding: .6rem 1.4rem;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
 
-    background-image: url("../images/contacto.png");
+    font-size: .95rem;
+    font-weight: 600;
+    border-radius: 999px;
+
+    transition: background-color .3s ease;
+}
+
+.related-card-content .btn-read:hover {
+    background-color: var(--primary-hover);
+}
+
+
+
+/* =========================================
+   15. ACERCA DE MÍ
+========================================= */
+
+.about {
+    padding: 9rem 2rem 5rem;
+
+    background-image: url("../images/fondo2-aboutme.png");
     background-size: cover;
     background-position: center;
-    position: relative;
+    background-repeat: no-repeat;
 }
-#contacto h2{
-    margin-bottom: 2rem;
-    text-align: center;
-}
-.contact-card{
-    max-width: 480px;
-    width: 100%;
 
-    padding: 2.5rem;
-    background: rgba(255,255,255,.45);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.12);
-}
-.about{
-    padding:5rem 2rem;
-    background-image: url("../images/fondo2-aboutme.png");
-}
-.about .container{
-    max-width: 1200px;
-    margin:0 auto;
-}
-.about-layout{
+.about .container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    align-items:stretch;
-    gap:5rem;
 }
-.about-title{
+
+.about-title {
     text-align: center;
     margin-bottom: 3rem;
 }
-.about-title h1{
-    font-size: 3rem;
+
+.about-title h1 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
 }
-.about-content{
+
+.about-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-content {
     flex: 1.15;
-    padding: 2rem;
-    background-color: var(--surface-color);
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-    max-width: 560px;
+    max-width: 600px;
+    padding: 0;
+
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
 }
-.about-content p{
+
+.about-content p {
     margin-bottom: 1.2rem;
     line-height: 1.7;
+    color: var(--text-color);
+
+    text-shadow: 0 1px 3px rgba(248, 247, 243, .85);
 }
-.about-content p:last-child{
+
+.about-content p:last-child {
     margin-bottom: 0;
 }
-.about-image{
+
+.about-image {
+    flex: 1;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
-.about-image img{
-    max-width: 600px;
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.14);
-}
-.about-cta{
-    margin-top: 1.8rem;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.about-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .10);
+}
+
+
+/* =========================================
+   16. CONTACTO
+========================================= */
+
+#contacto {
+    min-height: auto;
+    padding: 7rem 2rem 1.5rem;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(248, 247, 243, .85) 0%,
+            rgba(248, 247, 243, .55) 35%,
+            rgba(248, 247, 243, 0) 70%
+        ),
+        url("../images/contacto.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contacto-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#contacto h1 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(3rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
 
     text-align: center;
+    margin-bottom: 1rem;
+}
 
+.contacto-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.contacto-intro {
+    max-width: 510px;
+}
+
+.contacto-intro h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.contacto-intro p {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+
+    text-shadow: 0 1px 3px rgba(248, 247, 243, .85);
+}
+
+.contact-card {
+    width: 100%;
+    max-width: none;
+    padding: 1.5rem 2rem;
+
+    display: grid;
+    gap: .7rem;
+
+    background: rgba(248, 247, 243, .72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .10);
+}
+
+.contact-info-group h3 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: .3rem;
+}
+
+.contact-info-group p,
+.contact-info-group address {
+    font-size: .95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.contact-info-group address {
+    font-style: normal;
+}
+
+.contact-info-group + .contact-info-group {
+    border-top: 1px solid rgba(62, 58, 54, .15);
+    padding-top: .6rem;
+}
+
+
+/* =========================================
+   17. FOOTER COMPACTO
+========================================= */
+
+.site-footer {
+    background: var(--background-color);
+    border-top: 1px solid #E6E2D9;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: .75rem 4%;
+
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
     gap: 1rem;
 }
-.about-cta p{
-    max-width: 320px;
 
-    font-size: 1rem;
+.footer-logo {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-brand p {
+    max-width: 180px;
+    font-size: .8rem;
+    line-height: 1.35;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info h3 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: .15rem;
+}
+
+.footer-info p {
+    font-size: .85rem;
     line-height: 1.6;
+}
 
+.footer-social {
+    text-align: right;
+}
+
+.footer-social p {
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
     color: var(--text-color);
-}
-.post-content{
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    line-height: 1.8;
-    color: var(--text-color);
-}
-.post-content h2{
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    font-size: 1.8rem;
-}
-.post-content p{
-    margin-bottom: 1.5rem;
-    text-align: justify;
-}
-.post-content ul{
-    margin: 1.5rem 0 2rem;
-    padding-left: 2rem;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
 }
 
-.post-content li{
-    margin-bottom: .8rem;
-}
-.post-content p:first-of-type{
-    font-size: 1.1rem;
+.social-links a:hover {
+    color: var(--primary-hover);
+    transform: translateY(-3px);
 }
 
-/*===============================================
-            Responsive 
-===============================================*/
-@media (max-width: 768px){
-    /* Header */
-    .header-container{
-        flex-direction: column;
-        gap: 1rem;
-        margin: .5rem 1rem;
-        padding: .5rem;
+.footer-bottom {
+    border-top: 1px solid #E6E2D9;
+    padding: .5rem 1rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: .75rem;
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   18. TABLETS Y PANTALLAS INTERMEDIAS
+========================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .editorial-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .logo{
-        width: 5rem;
+
+    .editorial-intro,
+    .editorial-strategies {
+        gap: 2rem;
     }
-    .menu{
+
+    .servicios-layout {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(280px, .9fr);
+
+        gap: 2rem;
+    }
+
+    .servicio-detalle {
+        padding: 2rem;
+    }
+
+    .card {
+        margin: 1rem;
+    }
+}
+
+
+/* =========================================
+   19. RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    .site-header {
+        padding: .75rem 3%;
+    }
+
+    .nav-pill {
+        border-radius: 24px;
+        padding: .7rem 1rem;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: .75rem 1.25rem;
-        font-size: .95rem;
+        gap: .75rem;
     }
-    /*Hero*/
-    #inicio{
+
+    .brand {
+        width: 48px;
+        height: 48px;
+    }
+
+    .site-nav {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+
+        gap: 1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: .25rem;
+    }
+
+    /* HERO PRINCIPAL */
+
+    #inicio {
         min-height: auto;
-        padding: 3rem 1.5rem;
+        padding: 9rem 1.5rem 3rem;
         align-items: flex-start;
     }
-    .hero-content{
+
+    .hero-content {
         width: 100%;
         max-width: none;
+        margin: 0;
         padding: 2rem 1.5rem;
     }
-    .hero-content h1{
-        font-size: 2.6rem;
-        line-height: 1.1;
+
+    .hero-content h1 {
+        font-size: clamp(2.7rem, 9vw, 3.6rem);
+        line-height: 1.05;
     }
-    .hero-content h2{
+
+    .hero-content h2 {
         font-size: 1rem;
     }
-    .hero-content p{
+
+    .hero-content p {
         font-size: 1rem;
         line-height: 1.6;
     }
-    /* Publicaciones*/
-    #publicaciones{
+
+    /* WHATSAPP */
+
+    .floating-cta {
+        left: 1rem;
+        bottom: 1rem;
+        padding: .75rem 1rem;
+        font-size: .85rem;
+    }
+
+    /* PUBLICACIONES DE INICIO */
+
+    #publicaciones {
         padding: 2rem 1rem;
     }
-    #publicaciones h2{
+
+    #publicaciones h2 {
         margin-top: 0;
         margin-bottom: 2rem;
     }
-    .cards{
+
+    .cards {
         flex-direction: column;
         gap: 1.5rem;
         width: 100%;
     }
-    .card{
+
+    .card {
         width: 100%;
         max-width: 100%;
         margin: 0;
-        flex-direction: column;
     }
-    .card img{
+
+    .card img {
         width: 100%;
         height: auto;
-        display: block;
     }
-    .card .content{
+
+    .card .content {
         width: 100%;
         padding: 1.5rem;
     }
-    .btn-read{
-        margin-top: 1rem;
+
+    /* SERVICIOS */
+
+    #servicios {
+        padding: 3rem 1.5rem;
     }
-    /*Servicios*/
-    #servicios{
-        padding: 3rem 1rem;
+
+    .servicios-encabezado {
+        margin-bottom: 2rem;
     }
-    .services{
-        flex-direction: column;
+
+    .servicios-layout {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
-    .service-card{
-        margin: 0;
+
+    .servicio-opcion {
+        min-height: 105px;
     }
-    .service-card img{
-        width: 120px;
-        height: 120px;
+
+    .servicio-nombre {
+        font-size: clamp(2rem, 7vw, 2.8rem);
     }
-    .service-card p{
+
+    .servicio-detalle {
+        position: static;
+        width: 100%;
+        max-width: 420px;
+        min-height: 350px;
+        aspect-ratio: auto;
+        padding: 2.5rem;
+        border-radius: 80px;
+    }
+
+    /* HERO ARTÍCULOS */
+
+    .post-hero {
+        min-height: 380px;
+        padding: 9rem 1.5rem 3rem;
+    }
+
+    .post-hero .content {
+        margin-left: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .post-hero h1 {
+        font-size: clamp(3rem, 10vw, 4.3rem);
+    }
+
+    .post-hero p {
+        font-size: 1rem;
         line-height: 1.6;
     }
-    /* About */
-    .about{
-        padding: 3rem 1 rem;
+
+    /* ARTÍCULOS EDITORIALES */
+
+    .post-content {
+        width: 100%;
+        padding: 3rem 1.5rem;
     }
-    .about-layout{
-        flex-direction: column;
+
+    .editorial-intro,
+    .editorial-strategies {
+        width: 100%;
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
-    .about-content{
+
+    .editorial-intro {
+        padding: 0 0 3rem;
+    }
+
+    .editorial-intro h2,
+    .editorial-strategies h2 {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+
+    .editorial-tips {
+        padding-left: 1.5rem;
+    }
+
+    .editorial-info {
         width: 100%;
-        max-width: 100%;
-        padding: 1.5rem;
+        padding: 2.5rem 0;
     }
-    .about-image img{
-        width: 100%;
-        max-width: 100%;
+
+    .editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
-    /* Footer */
-    .footer-container{
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 1.5rem 1rem;
-    }
-    .footer-card{
-        width: 100%;
-    }
-    .footer-info{
-        font-size: 1rem;
-    }
-    .footer-info h3{
+
+    .editorial-item h2 {
         font-size: 1.5rem;
-        margin-bottom: .5rem;
+    }
+
+    .editorial-strategies {
+        padding: 3rem 0 2rem;
+    }
+
+    .editorial-closing {
+        width: 100%;
+        margin: 1rem 0 0;
+    }
+
+    /* PUBLICACIONES RELACIONADAS */
+
+    .related-posts {
+        width: 100%;
+        padding: 2rem 1.5rem 3rem;
+    }
+
+    .related-card {
+        gap: 1rem;
+    }
+
+    .related-card img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .related-card-content h3 {
+        font-size: 1.7rem;
+    }
+
+    .related-card-content p {
+        font-size: .9rem;
+    }
+
+    /* ACERCA DE MÍ */
+
+    .about {
+        padding: 9rem 1rem 3rem;
+    }
+
+    .about-layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .about-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* CONTACTO */
+
+    #contacto {
+        padding: 9rem 1.5rem 3rem;
+    }
+
+    #contacto h1 {
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .contacto-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contacto-intro {
+        max-width: 100%;
+    }
+
+    .contact-card {
+        padding: 1.75rem;
+        border-radius: 24px;
+    }
+
+    /* FOOTER */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .footer-brand p {
+        max-width: 240px;
+    }
+
+    .footer-social {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom p {
+        font-size: .7rem;
+    }
+}
+
+
+/* =========================================
+   20. PANTALLAS MUY PEQUEÑAS
+========================================= */
+
+@media (max-width: 420px) {
+
+    .servicio-detalle {
+        padding: 2rem 1.5rem;
+        border-radius: 64px;
+    }
+
+    .servicio-informacion h3 {
+        font-size: 1.8rem;
+    }
+
+    .related-card img {
+        width: 90px;
+        height: 100px;
+    }
+
+    .related-card-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* =========================================
+   21. ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms;
+        transition-duration: .01ms;
     }
 }

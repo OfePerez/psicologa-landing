@@ -92,171 +92,308 @@
     <link rel="manifest" href="../icons/site.webmanifest" />
 </head>
 <body>
-    <header>
-        <div class=" header-container">
-            <div class="logo">
-                <img src="../images/logo.png ">
-            </div>
-        
+    <header class="site-header">
+        <div class="nav-pill">
 
-        <nav class="nav-bar">
-            <ul class="menu">
-                <li>
-                    <a href="../index.html">INICIO</a>
-                </li>
-                <li>
-                    <a href="../pages/aboutme.html">ACERCA DE MÍ</a>
-                </li>
-                <li>
-                    <a href="../pages/contact.html">CONTACTO</a>
-                </li>
-            </ul>
-        </nav>
+            <a href="../index.html#inicio" class="brand"
+                aria-label="Sofía Martínez - Inicio">
+                <img src="../images/logo.png" alt="Lic. Sofía Martínez">
+            </a>
+
+            <nav class="site-nav" aria-label="Navegación principal">
+                <a href="../index.html#inicio">Inicio</a>
+                <a href="../pages/aboutme.html">Acerca de mí</a>
+                <a href="../index.html#servicios">Servicios</a>
+                <a href="../pages/contact.html">Contacto</a>
+            </nav>
         </div>
     </header>
     <main>
-        <main>
-    <section id="hero-autocuidado" class="post-hero">
-        <div class="content">
-            <h1>La importancia del autocuidado</h1>
 
-            <p>
-                <strong>
-                    Si hace tiempo que no te dedicás un momento para vos,
-                    empezá por algo simple hoy:
-                </strong>
-            </p>
+        <!-- =====================================
+            HERO - AUTOCUIDADO
+            Se conserva sin modificaciones
+        ===================================== -->
 
-            <ul>
-                <li>Tomate cinco minutos para respirar sin interrupciones.</li>
-                <li>Hacé una pausa durante el día para identificar cómo te sentís.</li>
-                <li>
-                    Elegí una actividad que disfrutes, aunque solo puedas
-                    dedicarle unos minutos.
-                </li>
-            </ul>
-
-            <p>
-                El autocuidado no requiere grandes cambios. Muchas veces
-                comienza con pequeñas acciones sostenidas en el tiempo.
-            </p>
-        </div>
-    </section>
-
-    <article class="post-content">
-        <h2>¿Qué es el autocuidado?</h2>
-
-        <p>
-            El autocuidado no consiste únicamente en descansar o dedicar
-            tiempo al ocio. También implica aprender a escuchar nuestras
-            necesidades, establecer límites saludables y crear hábitos que
-            favorezcan el bienestar físico y emocional.
-        </p>
-
-        <h2>¿Por qué solemos dejarlo en segundo plano?</h2>
-
-        <p>
-            En el ritmo cotidiano es frecuente priorizar el trabajo, las
-            responsabilidades o las necesidades de los demás. Con el tiempo,
-            dejar de lado el descanso, la alimentación, el ocio o los vínculos
-            puede afectar nuestro bienestar emocional sin que lo notemos de
-            inmediato.
-        </p>
-
-        <h2>Pequeñas acciones que pueden ayudarte</h2>
-
-        <p>
-            Incorporar hábitos de autocuidado no significa cambiar toda la
-            rutina de un día para otro. Podés comenzar con acciones simples:
-        </p>
-
-        <ul>
-            <li>Reservá unos minutos del día para hacer una pausa.</li>
-            <li>Intentá dormir y alimentarte de manera regular.</li>
-            <li>Realizá alguna actividad física que disfrutes.</li>
-            <li>Aprendé a decir “no” cuando sea necesario.</li>
-            <li>
-                Buscá espacios para compartir con personas que te hagan bien.
-            </li>
-        </ul>
-
-        <p>
-            Estas pequeñas acciones pueden contribuir a afrontar los desafíos
-            cotidianos con mayor equilibrio y tranquilidad.
-        </p>
-
-        <h2>¿Cómo puede ayudarte la terapia?</h2>
-
-        <p>
-            En ocasiones, incorporar hábitos de autocuidado resulta difícil
-            porque existen preocupaciones, exigencias o emociones que los
-            obstaculizan.
-        </p>
-
-        <p>
-            La terapia puede ofrecer un espacio para comprender esas
-            dificultades, fortalecer recursos personales y construir
-            estrategias que favorezcan un mayor bienestar.
-        </p>
-    </article>
-
-    <section class="related-posts">
-        <h2>Otros recursos que pueden ayudarte</h2>
-
-        <a href="./ansiedad.html" class="related-card">
-            <img
-                src="../images/ansiedad.png"
-                alt="Persona practicando una técnica de respiración para reducir la ansiedad">
-
+        <section id="hero-autocuidado" class="post-hero">
             <div class="content">
-                <h3>Cómo manejar la ansiedad</h3>
+                <h1>La importancia del autocuidado</h1>
 
                 <p>
-                    Estrategias prácticas para ayudarte a reducir la ansiedad
-                    y recuperar la calma.
+                    <strong>
+                        Si hace tiempo que no te dedicás un momento para vos,
+                        empezá por algo simple hoy:
+                    </strong>
                 </p>
 
-                <span class="btn-read">Leer más</span>
+                <ul>
+                    <li>Tomate cinco minutos para respirar sin interrupciones.</li>
+                    <li>Hacé una pausa durante el día para identificar cómo te sentís.</li>
+                    <li>
+                        Elegí una actividad que disfrutes, aunque solo puedas
+                        dedicarle unos minutos.
+                    </li>
+                </ul>
+
+                <p>
+                    El autocuidado no requiere grandes cambios. Muchas veces
+                    comienza con pequeñas acciones sostenidas en el tiempo.
+                </p>
             </div>
-        </a>
-    </section>
+        </section>
+
+
+        <!-- =====================================
+            CONTENIDO EDITORIAL
+        ===================================== -->
+
+        <article class="post-content">
+
+            <!-- 01. COMPRENDER EL AUTOCUIDADO -->
+
+            <section class="editorial-intro">
+
+                <div class="editorial-intro-text">
+                    <span class="editorial-label">
+                        BIENESTAR EMOCIONAL
+                    </span>
+
+                    <h2>¿Qué es el autocuidado?</h2>
+
+                    <p>
+                        El autocuidado no consiste únicamente en descansar
+                        o dedicar tiempo al ocio. También implica aprender
+                        a escuchar nuestras necesidades, establecer límites
+                        saludables y crear hábitos que favorezcan el
+                        bienestar físico y emocional.
+                    </p>
+                </div>
+
+                <div class="editorial-intro-text">
+                    <span class="editorial-label">
+                        EN LA VIDA COTIDIANA
+                    </span>
+
+                    <h2>
+                        ¿Por qué solemos dejarlo en segundo plano?
+                    </h2>
+
+                    <p>
+                        En el ritmo cotidiano es frecuente priorizar el
+                        trabajo, las responsabilidades o las necesidades
+                        de los demás.
+                    </p>
+
+                    <p>
+                        Con el tiempo, dejar de lado el descanso,
+                        la alimentación, el ocio o los vínculos puede
+                        afectar nuestro bienestar emocional sin que
+                        lo notemos de inmediato.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- 02. GUÍA DE AUTOCUIDADO -->
+
+            <section class="editorial-strategies">
+
+                <div class="editorial-strategies-heading">
+                    <span class="editorial-label">
+                        PEQUEÑOS HÁBITOS
+                    </span>
+
+                    <h2>
+                        Pequeñas acciones que pueden ayudarte.
+                    </h2>
+
+                    <p>
+                        Incorporar hábitos de autocuidado no significa
+                        cambiar toda la rutina de un día para otro.
+                        Podés comenzar con acciones simples:
+                    </p>
+                </div>
+
+                <div class="editorial-strategies-list">
+
+                    <ol>
+                        <li>
+                            Reservá unos minutos del día para hacer una pausa.
+                        </li>
+
+                        <li>
+                            Intentá dormir y alimentarte de manera regular.
+                        </li>
+
+                        <li>
+                            Realizá alguna actividad física que disfrutes.
+                        </li>
+
+                        <li>
+                            Aprendé a decir “no” cuando sea necesario.
+                        </li>
+
+                        <li>
+                            Buscá espacios para compartir con personas
+                            que te hagan bien.
+                        </li>
+                    </ol>
+
+                </div>
+
+            </section>
+
+
+            <!-- 03. REFLEXIÓN -->
+
+            <p class="editorial-closing">
+                Estas pequeñas acciones pueden contribuir a afrontar
+                los desafíos cotidianos con mayor equilibrio
+                y tranquilidad.
+            </p>
+
+
+            <!-- 04. ACOMPAÑAMIENTO PROFESIONAL -->
+
+            <section class="editorial-info">
+
+                <span class="editorial-label">
+                    ACOMPAÑAMIENTO PROFESIONAL
+                </span>
+
+                <div class="editorial-item">
+
+                    <h2>¿Cómo puede ayudarte la terapia?</h2>
+
+                    <p>
+                        En ocasiones, incorporar hábitos de autocuidado
+                        resulta difícil porque existen preocupaciones,
+                        exigencias o emociones que los obstaculizan.
+                    </p>
+
+                    <p>
+                        La terapia puede ofrecer un espacio para comprender
+                        esas dificultades, fortalecer recursos personales
+                        y construir estrategias que favorezcan
+                        un mayor bienestar.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </article>
+
+
+        <!-- =====================================
+            PUBLICACIÓN RELACIONADA
+        ===================================== -->
+
+        <section class="related-posts">
+
+            <h2>Otros recursos que pueden ayudarte</h2>
+
+            <a href="./ansiedad.html" class="related-card">
+
+                <img
+                    src="../images/ansiedad.png"
+                    alt="Persona practicando una técnica de respiración para reducir la ansiedad"
+                >
+
+                <div class="related-card-content">
+
+                    <h3>Cómo manejar la ansiedad</h3>
+
+                    <p>
+                        Estrategias prácticas para ayudarte a reducir
+                        la ansiedad y recuperar la calma.
+                    </p>
+
+                    <span class="btn-read">Leer más</span>
+
+                </div>
+
+            </a>
+
+        </section>
+
 </main>
     </main>
-    <footer>
+    <footer class="site-footer">
+
         <div class="footer-container">
-            <article class="footer-card">
-                <div class="logo">
-                    <img src="../images/logo.png" alt="">
-                </div>
-                <p>Cuidar tu salud mental es invertir en tu bienestar </p>
-            </article>
-            <article class="footer-card footer-info">
-                <h3>Lic. Sofía Martinez</h3>
-                <div class="footer-detail">
-                    <p>Psicóloga Clínica</p>
-                    <p>M.P 12.345</p>
-                    <p>Atención presencial y online</p>
-                </div>
-            </article>
-            <article class="footer-card footer-social">
-                <h3>Seguime en redes</h3>
-                
+
+            <!-- Identidad -->
+            <div class="footer-brand">
+                <img
+                    src="../images/logo.png"
+                    alt="Logo de Lic. Sofía Martínez"
+                    class="footer-logo"
+                >
+                <p>
+                    Cuidar tu salud mental es invertir
+                    en tu bienestar.
+                </p>
+            </div>
+
+            <!-- Información profesional -->
+            <div class="footer-info">
+                <h3>Lic. Sofía Martínez</h3>
+
+                <p>Psicóloga clínica</p>
+                <p>M.P. 12.345</p>
+                <p>Atención presencial y online</p>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="footer-social">
+                <p>Seguime en redes</p>
+
                 <div class="social-links">
-                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"
+                        aria-hidden="true"></i>
                     </a>
 
-                    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-
-                    <a href="https://wa.me/5492610000000" target="_blank" aria-label="WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
+                    <a
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"
+                        aria-hidden="true"></i>
                     </a>
                 </div>
-            </article>
+            </div>
+
         </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Lic. Sofía Martínez · Todos los derechos reservados</p>
+        </div>
+
     </footer>
+
+
+    <!-- Botón de contacto flotante -->
+    
+    <a
+        href="https://wa.me/5492611234567"
+        class="btn-whatsapp floating-cta"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Agendá consulta por WhatsApp"
+    >
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span>Agendá consulta</span>
+    </a>
 </body>
 </html>
 
